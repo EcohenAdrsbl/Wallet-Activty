@@ -43,11 +43,18 @@ app.frame('/', (c) => {
 
   return c.res({
     image: (
-      <div style={{ color: 'white', display: 'flex', fontSize: 60, flexDirection: 'column', alignItems: 'center' }}>
-        {imageUrl ? (
-          <img src={imageUrl} alt={`Selected: ${buttonValue}`} style={{ width: '100%', maxWidth: '100%' }} />
+      <div style={{ color: 'white', display: 'flex', fontSize: 60, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+        {buttonValue ? (
+          imageUrl ? (
+            <img src={imageUrl} alt={`Selected: ${buttonValue}`} style={{ width: '100%', maxWidth: '100%' }} />
+          ) : (
+            `Selected: ${buttonValue}`
+          )
         ) : (
-          `Selected: ${buttonValue}`
+          <div style={{ textAlign: 'center' }}>
+            <p>Please select a network:</p>
+            <img src="https://i.ibb.co/QFBf1Sj/Blockchain-Devs-Cover-1.png" alt="Initial Frame" style={{ width: '100%', maxWidth: '100%' }} />
+          </div>
         )}
       </div>
     ),
